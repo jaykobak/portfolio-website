@@ -1,0 +1,50 @@
+/* these styles are applied to all elements on the page */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+}
+
+/* these styles are applied to the body element */
+body {
+    /* define color tokens for use throughout the stylesheet */
+    --token-528f84e0-f915-420f-bf60-2cbf77101a8e: rgb(255, 255, 255);
+    --token-6510fa55-c69a-42d8-a1e8-6b55182b3dfa: rgb(214, 214, 214);
+    --token-012e9259-476e-4ce8-b232-f97a7a4ed06f: rgb(13, 13, 13);
+    --token-061c2b9f-64af-493d-8868-31ff2263526e: rgb(15, 15, 15);
+    --token-305af9d4-fe33-4ce3-9dac-e261fb045b39: rgb(250, 36, 36);
+}
+
+/* these styles are applied to elements with the class "main_bg" */
+.main_bg {
+    align-content: center;
+    align-items: center;
+    background-color: var(--token-012e9259-476e-4ce8-b232-f97a7a4ed06f, #0d0d0d);
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0px;
+    height: auto;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1
+}
+
+/* these styles are applied to elements with the class "gradient_bg". */
+.gradient_bg {
+    -webkit-filter: blur(100px);
+    background: linear-gradient(180deg, var(--token-305af9d4-fe33-4ce3-9dac-e261fb045b39, #d72a2a) -43%, var(--token-305af9d4-fe33-4ce3-9dac-e261fb045b39, rgb(255, 82, 14)) 100%);
+    filter: blur(100px);
+    flex: none;
+    height: 212px;
+    opacity: .5;
+    overflow: visible;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1047px;
+    z-index: 1;
+}
