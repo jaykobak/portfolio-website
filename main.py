@@ -1,7 +1,9 @@
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap5
 
 # create a flask application instance
 app = Flask(__name__)
+bootstrap = Bootstrap5(app)
 
 # the home route
 @app.route("/")

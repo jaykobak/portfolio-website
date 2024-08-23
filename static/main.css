@@ -1,3 +1,10 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
 /* these styles are applied to all elements on the page */
 * {
     box-sizing: border-box;
@@ -14,6 +21,16 @@ body {
     --token-305af9d4-fe33-4ce3-9dac-e261fb045b39: rgb(250, 36, 36);
 }
 
+h1 {
+    color: white; /* Pure white text color */
+    background: none; /* Remove any background color */
+    margin: 0;
+    padding: 0;
+    font-size: 36px; /* Adjust the size as needed */
+    text-shadow: none; /* Remove any text shadow if applied */
+    z-index: 2; /* Ensure it is above other elements if necessary */
+}
+
 /* these styles are applied to elements with the class "main_bg" */
 .main_bg {
     align-content: center;
@@ -23,13 +40,14 @@ body {
     flex: none;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 0px;
     height: auto;
     justify-content: center;
     overflow: visible;
     padding: 0;
     position: relative;
     width: 100%;
+    padding: 0;
+    margin: 0;
     z-index: 1
 }
 
@@ -41,10 +59,93 @@ body {
     flex: none;
     height: 212px;
     opacity: .5;
-    overflow: visible;
     position: absolute;
     right: 0;
     top: 0;
     width: 1047px;
     z-index: 1;
+}
+
+.navbar_container {
+    flex: none;
+    height: auto;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+    z-index: 3;
+}
+
+header {
+    backdrop-filter: blur(8px);
+    width: 100%;
+    opacity: 1;
+}
+
+.navbar_contents {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0px;
+    height: min-content;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px 100px;
+    position: relative;
+}
+
+nav {
+    opacity: 1;
+}
+
+.nav_links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: transparent; /* Ensure background is transparent */
+}
+
+.links {
+    display: flex;
+    gap: 50px; /* Space between the links */
+}
+
+.nav_item {
+    position: relative;
+}
+
+.nav_link_text {
+    color: white; /* Pure white text */
+    text-decoration: none;
+    font-size: 16px; /* Adjust the size as needed */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.nav_link_text:hover {
+    color: #f91616; /* Slightly lighter white on hover */
+}
+
+/* Google fonts */
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 800 */
+
+/* .open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+  
+.open-sans-nav-link {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: 
+    "wdth" 100;
 }
