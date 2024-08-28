@@ -1,0 +1,181 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* these styles are applied to all elements on the page */
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+}
+
+/* these styles are applied to the body element */
+body {
+    /* define color tokens for use throughout the stylesheet */
+    --token-528f84e0-f915-420f-bf60-2cbf77101a8e: rgb(255, 255, 255);
+    --token-6510fa55-c69a-42d8-a1e8-6b55182b3dfa: rgb(214, 214, 214);
+    --token-012e9259-476e-4ce8-b232-f97a7a4ed06f: rgb(13, 13, 13);
+    --token-061c2b9f-64af-493d-8868-31ff2263526e: rgb(15, 15, 15);
+    --token-305af9d4-fe33-4ce3-9dac-e261fb045b39: rgb(250, 36, 36);
+}
+
+.navbar {
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    width: 100%;
+    opacity: 1;
+    margin-top: 3px;
+    margin-left: 4px;
+} 
+
+.navbar-brand {
+    padding-left: 20px;
+}
+
+.navbar-nav {
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Default styles for larger screens */
+.nav-link {
+    color: white !important;
+    text-align: center;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+    height: 2px;
+    width: 0;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Styles for smaller screens */
+@media (max-width: 768px) {
+    .nav-link:hover {
+        color: red !important;
+    }
+
+    /* Disable the underline effect on smaller screens */
+    .nav-link::after {
+        width: 0; 
+        background-color: transparent;
+        color: red;
+    }
+}
+
+.disabled-link {
+    pointer-events: none;
+    color: grey;
+    text-decoration: none;
+    cursor: not-allowed;
+    opacity: 0.5; 
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.border-button {
+    float: right;
+    border: 1px solid rgb(255, 30, 30);
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: white;
+    margin-right: 34px;
+}
+
+.border-button:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+@media (max-width: 768px) {
+    .border-button {
+      display: none;
+    }
+  }
+
+.main_bg {
+    text-align: center;
+    background-color: var(--token-012e9259-476e-4ce8-b232-f97a7a4ed06f, #0d0d0d);
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+.gradient_bg {
+    -webkit-filter: blur(100px);
+    background: linear-gradient(180deg, var(--token-305af9d4-fe33-4ce3-9dac-e261fb045b39, #d72a2a) -43%, var(--token-305af9d4-fe33-4ce3-9dac-e261fb045b39, rgb(255, 82, 14)) 100%);
+    filter: blur(100px);
+    flex: none;
+    height: 300px;
+    opacity: .4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    z-index: 1;
+}
+
+.content-section {
+    padding: 60px 0;
+    color: white;
+    z-index: 1;
+}
+
+h1,
+h2 {
+    color: white;
+}
+
+/* Fonts */
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+.inter-navbar-brand {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.inter-navbar-links {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+/* .navbar-brand {
+    font-size: 1.5rem;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  body {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  } */
