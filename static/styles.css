@@ -26,13 +26,18 @@ body {
     backdrop-filter: blur(8px);
     width: 100%;
     opacity: 1;
-    margin-top: 3px;
     margin-left: 4px;
 } 
 
 .navbar-brand {
     padding-left: 20px;
 }
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        padding-left: 0;
+    }
+  }
 
 .navbar-nav {
     flex-direction: row;
@@ -46,33 +51,9 @@ body {
     position: relative;
 }
 
-.nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 7px;
-    height: 2px;
-    width: 0;
-    background-color: white;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-/* Styles for smaller screens */
-@media (max-width: 768px) {
-    .nav-link:hover {
-        color: red !important;
-    }
-
-    /* Disable the underline effect on smaller screens */
-    .nav-link::after {
-        width: 0; 
-        background-color: transparent;
-        color: red;
-    }
+/* Hover effect for the navlink */
+.nav-link:hover {
+    color: rgb(254, 57, 57) !important;
 }
 
 .disabled-link {
@@ -114,6 +95,7 @@ body {
     flex: none;
     flex-direction: column;
     position: relative;
+    padding-top: 56px;
     min-height: 100vh;
     justify-content: center;
     overflow: hidden;
@@ -140,6 +122,66 @@ body {
     z-index: 1;
 }
 
+/* Styling for the main header */
+.main-header {
+    text-align: center;
+    padding: 15% 20px;
+    margin: 0 auto;
+    max-width: 100%;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 30% 20px;
+    }
+  }
+
+/* Styling for the h2 element */
+.main-header h2 {
+    font-size: 64px;
+    color: white !important;
+}
+
+/* Styling for the paragraph */
+.main-header p {
+    font-size: 36px;
+    color: grey; 
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .main-header h2 {
+        font-size: 40px; 
+    }
+
+    .main-header p {
+        font-size: 25px; 
+    }
+}
+
+.typed {
+    position: relative;
+    color: inherit;
+    padding-bottom: 5px;
+}
+
+.typed-cursor {
+    font-weight: bold;
+    color: white;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+
 h1,
 h2 {
     color: white;
@@ -162,20 +204,58 @@ h2 {
     font-weight: 300;
     font-style: normal;
   }
-/* .navbar-brand {
-    font-size: 1.5rem;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  .nav-link {
-    font-size: 1.2rem;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  body {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-  } */
+
+.inter-main_header {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.inter-main-header-paragraph {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Fade in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.fade-in:nth-child(4) {
+    animation-delay: 3s;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.svgContainer {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: inherit;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
