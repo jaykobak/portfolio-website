@@ -76,6 +76,7 @@ body {
     background-color: transparent;
     color: white;
     margin-right: 34px;
+    transition: background-color 0.3s ease;
 }
 
 .border-button:hover {
@@ -95,7 +96,6 @@ body {
     flex: none;
     flex-direction: column;
     position: relative;
-    padding-top: 56px;
     min-height: 100vh;
     justify-content: center;
     overflow: hidden;
@@ -117,25 +117,24 @@ body {
 }
 
 .content-section {
-    padding: 60px 0;
     color: white;
     z-index: 1;
 }
 
 /* Styling for the main header */
-.main-header {
+.full-page-header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     text-align: center;
-    padding: 15% 20px;
-    margin: 0 auto;
-    max-width: 100%;
+    position: relative;
     z-index: 3;
 }
-
-@media (max-width: 768px) {
-    .main-header {
-        padding: 30% 20px;
-    }
-  }
+.main-header {
+    max-width: 100%;
+}
 
 /* Styling for the h2 element */
 .main-header h2 {
@@ -163,7 +162,6 @@ body {
 .typed {
     position: relative;
     color: inherit;
-    padding-bottom: 5px;
 }
 
 .typed-cursor {
@@ -181,6 +179,63 @@ body {
     }
 }
 
+/* Styling for social links */
+.social-links {
+    margin-top: 25px;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.full-page-header .social-links i {
+    color: white;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect for the social links */
+.full-page-header .social-links i:hover{
+    background-color: #ff6b6b;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Styling for about me section */
+.about-me-button-container {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1000;
+}
+
+.about-me-button {
+    background-color: transparent;
+    border: 2px solid #e63946;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the button */
+.about-me-button:hover {
+    background-color: #e63946;
+    color: white;
+    border-color: #e63946;
+}
 
 h1,
 h2 {
@@ -219,34 +274,24 @@ h2 {
     font-style: normal;
 }
 
-/* Fade in animation */
-.fade-in {
+.inter-about-me-section {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Animate on scroll effect */
+.animate-on-scroll {
     opacity: 0;
-    animation: fadeInAnimation 1s ease forwards;
-    animation-delay: 0.5s;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.fade-in:nth-child(2) {
-    animation-delay: 1s;
-}
-
-.fade-in:nth-child(3) {
-    animation-delay: 2s;
-}
-
-.fade-in:nth-child(4) {
-    animation-delay: 3s;
-}
-
-@keyframes fadeInAnimation {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Class to apply when element is visible */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .svgContainer {
@@ -256,6 +301,7 @@ h2 {
 }
 
 svg {
-    width: 100%;
-    height: 100%;
+    width: 5%;
+    height: 5%;
+    margin: 8%;
 }
