@@ -60,8 +60,7 @@ body {
     pointer-events: none;
     color: grey;
     text-decoration: none;
-    cursor: not-allowed;
-    opacity: 0.5; 
+    opacity: 0.5;
 }
 
 .navbar-collapse {
@@ -70,7 +69,7 @@ body {
 
 .border-button {
     float: right;
-    border: 1px solid rgb(255, 30, 30);
+    border: 1px solid #e63946 !important;
     border-radius: 5px;
     padding: 5px 10px;
     background-color: transparent;
@@ -80,7 +79,7 @@ body {
 }
 
 .border-button:hover {
-    background-color: rgb(255, 0, 0);
+    background-color: #e63946 !important;
 }
 
 @media (max-width: 768px) {
@@ -159,6 +158,16 @@ body {
     }
 }
 
+@media (max-width: 380px) {
+    .main-header h2 {
+        font-size: 38px; 
+    }
+
+    .main-header p {
+        font-size: 18px; 
+    }
+}
+
 .typed {
     position: relative;
     color: inherit;
@@ -179,43 +188,51 @@ body {
     }
 }
 
-/* Styling for social links */
+/* Styling for the social links */
 .social-links {
-    margin-top: 25px;
-    text-align: center;
+    display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.full-page-header .social-links i {
-    color: white;
-    font-size: 24px;
+@media (max-width: 768px) {
+    .social-links {
+        gap: 10px;
+    }
+  }
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
     width: 50px;
     height: 50px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 0 10px;
-    text-decoration: none;
+    border: 1px solid #f5f5f5;
     border-radius: 50%;
-    transition: background-color 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for the social links */
-.full-page-header .social-links i:hover{
-    background-color: #ff6b6b;
+.social-links a:hover {
+    background-color: #e63946;
     color: white;
+    border-color: #e63946;
     transform: scale(1.1);
 }
 
 /* Styling for about me section */
 .about-me-button-container {
-    position: absolute;
-    width: 100%;
+    position: fixed;
     bottom: 20px;
+    width: auto;
     left: 50%;
     transform: translate(-50%);
     z-index: 1000;
+    text-align: center;
 }
 
 .about-me-button {
@@ -292,16 +309,4 @@ h2 {
 .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.svgContainer {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: inherit;
-}
-
-svg {
-    width: 5%;
-    height: 5%;
-    margin: 8%;
 }
