@@ -26,11 +26,10 @@ body {
     backdrop-filter: blur(8px);
     width: 100%;
     opacity: 1;
-    margin-left: 4px;
 } 
 
 .navbar-brand {
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 @media (max-width: 768px) {
@@ -42,6 +41,13 @@ body {
 .navbar-nav {
     flex-direction: row;
     gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 /* Default styles for larger screens */
@@ -255,9 +261,190 @@ body {
 }
 
 h1,
-h2 {
-    color: white;
+h2,
+h4 {
+    color: white !important;
 }
+
+/* About page */
+.about-me-intro, .skills-expertise {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    padding: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    background-color: transparent;
+    max-width: 80%; 
+    margin: 20px auto; 
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect for larger screens */
+.about-me-intro:hover, .skills-expertise:hover {
+    border-color: #e63946 !important;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.7), 0 8px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.about-me-intro.glow-effect, .skills-expertise.glow-effect {
+    border-color: #e63946;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.7), 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .about-me-intro:hover, .skills-expertise:hover {
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+div h4 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+div h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50%;
+    height: 4px;
+    background-color: #e63946;
+}
+
+div h5 {
+    font-size: 1rem;
+    margin: 20px 0;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    div h5 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+div h5::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    width: 30%;
+    height: 3px;
+    background-color: #e63946;
+}
+
+.about-paragraphs {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.paragraph {
+    font-size: 16px;
+    margin: 20px 0;
+    line-height: 1.6; 
+}
+
+/* font-size for smaller screens */
+@media (max-width: 768px) {
+    .paragraph {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .paragraph {
+        font-size: 15px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-paragraphs {
+        margin-left: 2%;
+        margin-right: 2%;
+        max-width: 100%;
+    }
+
+    .about-me-intro, .skills-expertise {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    div h4 {
+        font-size: 1.5rem;
+    }
+}
+
+.link-to-services {
+    text-decoration: none;
+    color: #e63946;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.link-to-services:hover {
+    color: #ff4d4d;
+}
+
+.skill-content {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left !important;
+}
+
+.skill-section {
+    margin-bottom: 20px;
+    height: 60px;
+    background: none;
+    border-radius: 0;
+}
+
+.skill-name {
+    color: white;
+    padding: 0;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    display: block;
+}
+
+.skill-percentage {
+    float: right;
+    font-style: normal;
+}
+
+.progress-bar-wrap {
+    background: #333;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.9s;
+    background-color: #e63946;
+    text-align: center;
+    border-radius: 5px;
+}
+
 
 /* Fonts */
 /* // <uniquifier>: Use a unique and descriptive class name
@@ -277,6 +464,12 @@ h2 {
     font-style: normal;
   }
 
+  @media (max-width: 768px) {
+    .inter-navbar-links {
+        font-weight: 400;
+    }
+  }
+
 .inter-main_header {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
@@ -284,7 +477,7 @@ h2 {
     font-style: normal;
 }
 
-.inter-main-header-paragraph {
+.inter-main-header-paragraph, .inter-skill-name {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -295,6 +488,20 @@ h2 {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
+    font-style: normal;
+}
+
+.inter-about-me-paragraph {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.inter-skill-content, .inter-skill-percentage {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500 !important;
     font-style: normal;
 }
 

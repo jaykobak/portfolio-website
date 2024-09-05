@@ -1,6 +1,6 @@
 // Initialize Typed.js
 var typed = new Typed('.typed', {
-    strings: ["Backend Developer", "Designer", "Fullstack Developer", "Freelancer", "Content Creator", "Tech Enthusiast"],
+    strings: ["Backend Developer", "Designer", "Fullstack Developer", "Freelancer", "Content Creator", "Tech Enthusiast", "Masterpiece"],
     typeSpeed: 100,
     backSpeed: 50,
     backDelay: 2000,
