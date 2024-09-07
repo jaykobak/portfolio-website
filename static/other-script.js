@@ -58,3 +58,32 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// JavaScript to animate the progress bars
+document.addEventListener('DOMContentLoaded', function () {
+    function isInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    const progressBars = document.querySelectorAll('.progress-bar');
+
+    function animateProgressBars() {
+        progressBars.forEach(function (bar) {
+            const value = bar.getAttribute('aria-valuenow');
+            if (isInViewport(bar)) {
+                bar.style.width = value + '%'; // Set width to the value percentage
+            }
+        });
+    }
+
+    // Trigger animation on scroll
+    window.addEventListener('scroll', animateProgressBars);
+    // Trigger animation on page load (in case the progress bars are already in view)
+    animateProgressBars();
+});
