@@ -14,34 +14,12 @@ skills = {
         "MySQL": "80%",
         "PostgreSQL": "75%",
         "SQLite": "70%",
-    },
-    "apis": {
-        "RESTful APIs": "85%",
-        "JSON": "90%",
+        "SQLAlchemy": "80%",
     },
     "version_control": {
         "Git": "85%",
         "GitHub": "85%",
         "GitLab": "70%",
         "GitBucket": "50%",
-    },
-    "tools": {
-        "Visual Studio Code": "90%",
-        "Pycharm": "85%",
-        "Sublime Text": "70%",
-        "Postman": "80%",
-        },
-    "frontend_tech": {
-        "HTML": "75%",
-        "CSS": "70%",
-        "Boostrap": "70%",
-    },
-    "non_tech": {
-        "Problem Solving": "80%",
-        "Communication": "85%",
-        "Teamwork and Collaboration": "80%",
-        "Time Management": "75%",
-        "Project Management": "70%",
-        "Creativity": "70%",
-        }
+    }
 }

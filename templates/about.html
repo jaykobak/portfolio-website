@@ -18,9 +18,12 @@
             <h4 class="inter-main-header-paragraph">My Journey</h4>
             <div class="about-paragraphs">
                 <p class="inter-about-me-paragraph paragraph">My name is Akintola Jacob, a backend developer
-                    specializing in creating robust and scalable solutions for mobile and web applications. I help businesses design, build and maintain the server-side logic, databases, and APIs that power applications. <a href=""
-                        class="link-to-services">Click here to learn more about my services</a></p>
-                <p class="inter-about-me-paragraph paragraph">I am a passionate tech enthusiast, eager to expand my knowledge and gain new experiences. I stay updated with the latest trends in technology, continuously improving my skills to provide the best solutions for the businesses I work with.</p>
+                    specializing in creating robust and scalable solutions for mobile and web applications. I help
+                    businesses design, build and maintain the server-side logic, databases, and APIs that power
+                    applications. <a href="" class="link-to-services">Click here to learn more about my services</a></p>
+                <p class="inter-about-me-paragraph paragraph">I am a passionate tech enthusiast, eager to expand my
+                    knowledge and gain new experiences. I stay updated with the latest trends in technology,
+                    continuously improving my skills to provide the best solutions for the businesses I work with.</p>
                 <p class="inter-about-me-paragraph paragraph">My mission is to mentor and guide aspiring developers,
                     helping them find their path in technology. My goal is not just to make a difference through my
                     work, but to inspire others and make impact through who I am.</p>
@@ -29,7 +32,7 @@
     </section>
     <!-- My skills -->
     <section class="animate-on-scroll">
-        <div class="skills-expertise">
+        <div class="about-me-intro">
             <h4 class="inter-main-header-paragraph">My Skills</h4>
             <div class="skill-content">
                 <div class="container">
@@ -42,8 +45,9 @@
                                     <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
                                 </span>
                                 <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
+                                    <div class="progress-bar" role="progressbar"
+                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
+                                        aria-valuemax="100" style="width: 0;"></div>
                                 </div>
                             </div>
                             {% endfor %}
@@ -56,8 +60,9 @@
                                     <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
                                 </span>
                                 <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
+                                    <div class="progress-bar" role="progressbar"
+                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
+                                        aria-valuemax="100" style="width: 0;"></div>
                                 </div>
                             </div>
                             {% endfor %}
@@ -70,22 +75,9 @@
                                     <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
                                 </span>
                                 <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="col-lg-6">
-                            <h5 class="inter-skill-content">APIs</h5>
-                            {% for skill, value in skills["apis"].items() %}
-                            <div class="skill-section">
-                                <span class="skill-name inter-skill-name">{{ skill }}
-                                    <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
-                                </span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
+                                    <div class="progress-bar" role="progressbar"
+                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
+                                        aria-valuemax="100" style="width: 0;"></div>
                                 </div>
                             </div>
                             {% endfor %}
@@ -98,38 +90,11 @@
                                     <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
                                 </span>
                                 <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
+                                    <div class="progress-bar" role="progressbar"
+                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
+                                        aria-valuemax="100" style="width: 0;"></div>
                                 </div>
                             </div>
-                            {% endfor %}
-                        </div>
-                        <div class="col-lg-6">
-                            <h5 class="inter-skill-content">Tools</h5>
-                            {% for skill, value in skills["tools"].items() %}
-                            <div class="skill-section">
-                                <span class="skill-name inter-skill-name">{{ skill }}
-                                    <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
-                                </span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="col-lg-6">
-                            <h5 class="inter-skill-content">Frontend Technologies</h5>
-                            {% for skill, value in skills["frontend_tech"].items() %}
-                            <div class="skill-section">
-                                <span class="skill-name inter-skill-name">{{ skill }}
-                                    <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
-                                </span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0" aria-valuemax="100"
-                                        style="width: 0;"></div>
-                                </div>
-                                </div>
                             {% endfor %}
                         </div>
                     </div>
