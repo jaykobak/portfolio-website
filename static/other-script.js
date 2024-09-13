@@ -87,3 +87,66 @@ document.addEventListener('DOMContentLoaded', function () {
     // Trigger animation on page load (in case the progress bars are already in view)
     animateProgressBars();
 });
+
+// Add an event listener to detect scroll events on mobile devices
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.project-card');
+    let isMobile = window.innerWidth < 768;
+    let activeCard = null; // To track the currently expanded card
+
+    // Intersection Observer callback
+    function handleCardVisibility(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove the 'active' class from the previously expanded card
+                if (activeCard && activeCard !== entry.target) {
+                    activeCard.classList.remove('active');
+                }
+
+                // Add the 'active' class to the currently visible card
+                entry.target.classList.add('active');
+                activeCard = entry.target; // Set this card as the active one
+            } else {
+                // Only collapse the card if it's the active one
+                if (activeCard === entry.target) {
+                    entry.target.classList.remove('active');
+                    activeCard = null; // Reset active card when it's out of view
+                }
+            }
+        });
+    }
+
+    // Intersection Observer options
+    const observer = new IntersectionObserver(handleCardVisibility, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    });
+
+    // Function to handle observer setup for mobile screens
+    function setupCards() {
+        cards.forEach(card => {
+            if (isMobile) {
+                // Observe the card for visibility if it's a mobile screen
+                observer.observe(card);
+            } else {
+                // Unobserve cards for larger screens
+                observer.unobserve(card);
+                card.classList.remove('active');  // Reset card state for larger screens
+            }
+        });
+    }
+
+    // Initialize observer and check on load
+    setupCards();
+
+    // Recheck when window is resized
+    window.addEventListener('resize', function() {
+        const wasMobile = isMobile;
+        isMobile = window.innerWidth < 768;
+
+        // If screen size changes between mobile and non-mobile, update cards
+        if (wasMobile !== isMobile) {
+            setupCards();
+        }
+    });
+});

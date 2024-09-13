@@ -1,6 +1,7 @@
 # Project based
 .DS_Store
 copy.txt
+sample.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
