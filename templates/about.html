@@ -39,8 +39,8 @@
                     <div class="row">
                         {% for skill in skills %}
                         <div class="col-lg-6">
-                            <h5 class="inter-skill-content">Programming Languages</h5>
-                            {% for skill, value in skills["programming_languages"].items() %}
+                            <h5 class="inter-skill-content">{{ " ".join(skill.split("_")).title() }}</h5>
+                            {% for skill, value in skills[skill].items() %}
                             <div class="skill-section">
                                 <span class="skill-name inter-skill-name">{{ skill }}
                                     <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
