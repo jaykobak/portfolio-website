@@ -2,6 +2,7 @@
 skills = {
     "programming_languages": {
         "Python": "90%",
+        "Java": "60%",
         "JavaScript": "75%",
         "SQL": "80%",
     },
@@ -9,6 +10,7 @@ skills = {
         "Flask": "85%",
         "Django": "75%",
         "Node.js": "80%",
+        "Express.js": "70%",
     },
     "database_management": {
         "MySQL": "80%",

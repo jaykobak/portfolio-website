@@ -1,10 +1,5 @@
-skills = {
-    "programming_languages": {
-        "Python": "100%",
-        "HTML": "200%"
-    }
-}
+from my_skills import skills
 
-for key, value in skills["programming_languages"].items():
-    if key == "Python":
-        print(key, value)
+for skill in skills:
+    new_skill = skill.split("_")
+    print(" ".join(new_skill).capitalize())

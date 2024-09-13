@@ -37,6 +37,7 @@
             <div class="skill-content">
                 <div class="container">
                     <div class="row">
+                        {% for skill in skills %}
                         <div class="col-lg-6">
                             <h5 class="inter-skill-content">Programming Languages</h5>
                             {% for skill, value in skills["programming_languages"].items() %}
@@ -52,51 +53,7 @@
                             </div>
                             {% endfor %}
                         </div>
-                        <div class="col-lg-6">
-                            <h5 class="inter-skill-content">Web Frameworks</h5>
-                            {% for skill, value in skills["web_frameworks"].items() %}
-                            <div class="skill-section">
-                                <span class="skill-name inter-skill-name">{{ skill }}
-                                    <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
-                                </span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar"
-                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
-                                        aria-valuemax="100" style="width: 0;"></div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="col-lg-6">
-                            <h5 class="inter-skill-content">Database Management</h5>
-                            {% for skill, value in skills["database_management"].items() %}
-                            <div class="skill-section">
-                                <span class="skill-name inter-skill-name">{{ skill }}
-                                    <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
-                                </span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar"
-                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
-                                        aria-valuemax="100" style="width: 0;"></div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        <div class="col-lg-6">
-                            <h5 class="inter-skill-content">Version Control</h5>
-                            {% for skill, value in skills["version_control"].items() %}
-                            <div class="skill-section">
-                                <span class="skill-name inter-skill-name">{{ skill }}
-                                    <i class="skill-percentage inter-skill-percentage">{{ value }}</i>
-                                </span>
-                                <div class="progress-bar-wrap">
-                                    <div class="progress-bar" role="progressbar"
-                                        aria-valuenow="{{ value|replace('%', '') }}" aria-valuemin="0"
-                                        aria-valuemax="100" style="width: 0;"></div>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
