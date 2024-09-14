@@ -469,6 +469,7 @@ div h5::after {
 }
 
 .project-image {
+    position: relative;
     height: 200px;
     background-size: cover;
     background-position: center;
@@ -481,6 +482,7 @@ div h5::after {
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    position: relative;
 }
 
 .project-details {
@@ -491,6 +493,7 @@ div h5::after {
     overflow: hidden;
     transition: max-height 0.6s ease-in-out, opacity 0.3s ease-in-out;
     border-top: 1px solid #ddd;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -511,6 +514,16 @@ div h5::after {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         transform: translateY(-10px);
     }
+}
+
+.project-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0.8;
+    pointer-events: auto;
 }
 
 /* Fonts */
