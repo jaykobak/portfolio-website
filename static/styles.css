@@ -95,13 +95,14 @@ body {
   }
 
 .main_bg {
+    min-height: 100vh;
+    width: 100vw;
     text-align: center;
     background-color: var(--token-012e9259-476e-4ce8-b232-f97a7a4ed06f, #0d0d0d);
     display: flex;
     flex: none;
     flex-direction: column;
     position: relative;
-    min-height: 100vh;
     justify-content: center;
     overflow: hidden;
 }
@@ -111,7 +112,7 @@ body {
     background: linear-gradient(180deg, var(--token-305af9d4-fe33-4ce3-9dac-e261fb045b39, #d72a2a) -43%, var(--token-305af9d4-fe33-4ce3-9dac-e261fb045b39, rgb(255, 82, 14)) 100%);
     filter: blur(100px);
     flex: none;
-    height: 300px;
+    height: 200px;
     opacity: .4;
     position: absolute;
     right: 0;
@@ -135,41 +136,47 @@ body {
     text-align: center;
     position: relative;
     z-index: 3;
+    padding: 0 20px;
 }
 .main-header {
-    max-width: 100%;
+    max-width: 90%;
+    z-index: 2;
 }
 
 /* Styling for the h2 element */
 .main-header h2 {
     font-size: 3rem;
+    line-height: 1.2;
     color: white !important;
 }
 
 /* Styling for the paragraph */
 .main-header p {
     font-size: 1.2rem;
-    color: grey; 
+    color: grey;
+    padding-bottom: 15px;
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .main-header h2 {
-        font-size: 2.5rem; 
+        font-size: 2.5rem;
+        max-width: 100%;
     }
 
     .main-header p {
-        font-size: 25px; 
+        font-size: 1rem;
     }
 }
 
-@media (max-width: 384px) {
+@media (max-width: 390px) {
     .main-header h2 {
-        font-size: 2rem; 
+        font-size: 2rem;
+        max-width: 100%;
     }
 
     .main-header p {
-        font-size: 20px; 
+        font-size: 1rem;
     }
 }
 
@@ -229,27 +236,77 @@ body {
     transform: scale(1.1);
 }
 
-/* Styling for about me section */
-.about-me-button-container {
+/* Button Container: Flex and Centering */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     position: fixed;
-    bottom: 20px;
-    width: auto;
+    width: 100%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translateX(-50%);
     z-index: 1000;
     text-align: center;
 }
 
-.about-me-button {
+/* Primary Button */
+.btn-primary {
     background-color: transparent;
     border: 2px solid #e63946;
     color: white;
     font-size: 16px;
     padding: 10px 20px;
-    border-radius: 25px;
+    border-radius: 10px;
     text-decoration: none;
-    text-align: center;
     transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #e63946;
+    color: white;
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: #e63946;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary {
+        font-size: 14px;
+        padding: 8px 18px;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .btn-primary,
+    .btn-secondary {
+        font-size: 12px;
+        padding: 6px 15px;
+        border-radius: 6px;
+    }
+
+    .btn-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }
 
 /* Hover effect for the button */
