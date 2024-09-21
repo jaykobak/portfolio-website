@@ -24,6 +24,7 @@ function animateOnScrollWithDelay() {
 // Initialize scroll animation with delay
 animateOnScrollWithDelay();
 
+// add glow effect
 document.addEventListener("DOMContentLoaded", function() {
     const aboutMeSections = document.querySelectorAll('.about-me-intro');
     const observerOptions = {
