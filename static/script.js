@@ -1,11 +1,3 @@
-// Initialize Typed.js
-var typed = new Typed('.typed', {
-    strings: ["Backend Developer"],
-    typeSpeed: 150,
-    backSpeed: 50,
-    backDelay: 2000,
-    loop: false
-});
 // Function to add the 'visible' class to elements when they come into view
 function animateOnScrollWithDelay() {
     const elements = document.querySelectorAll('.animate-on-scroll');

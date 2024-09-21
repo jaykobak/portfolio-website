@@ -104,7 +104,6 @@ body {
     min-height: 100vh;
     justify-content: center;
     overflow: hidden;
-
 }
 
 .gradient_bg {
@@ -143,20 +142,20 @@ body {
 
 /* Styling for the h2 element */
 .main-header h2 {
-    font-size: 64px;
+    font-size: 3rem;
     color: white !important;
 }
 
 /* Styling for the paragraph */
 .main-header p {
-    font-size: 36px;
+    font-size: 1.2rem;
     color: grey; 
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .main-header h2 {
-        font-size: 40px; 
+        font-size: 2.5rem; 
     }
 
     .main-header p {
@@ -164,9 +163,9 @@ body {
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 384px) {
     .main-header h2 {
-        font-size: 38px; 
+        font-size: 2rem; 
     }
 
     .main-header p {
