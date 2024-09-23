@@ -26,7 +26,7 @@ animateOnScrollWithDelay();
 
 // add glow effect
 document.addEventListener("DOMContentLoaded", function() {
-    const aboutMeSections = document.querySelectorAll('.about-me-intro');
+    const aboutMeSections = document.querySelectorAll('.intro');
     const observerOptions = {
         root: null, // use the viewport as the container
         rootMargin: '0px',
