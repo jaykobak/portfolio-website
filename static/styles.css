@@ -398,9 +398,6 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    #about {
-        padding: 30px 10px;
-    }
 
     .response-content {
         font-size: 0.9rem;
@@ -494,7 +491,7 @@ div h4 {
     font-size: 2rem;
     margin-top: 20px;
     position: relative;
-    display: block;
+    display: inline-block;
 }
 
 div h4::after {
@@ -511,7 +508,7 @@ div h5 {
     font-size: 1rem;
     margin: 20px 0;
     position: relative;
-    display: block;
+    display: inline-block;
     text-align: left;
 }
 
@@ -594,57 +591,6 @@ div h5::after {
     }
 }
 
-/* Common properties for both sections */
-.content-section {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-    position: absolute; /* Ensures both sections are on top of each other */
-    width: 100%;
-    top: 0; /* Align sections to fill the container */
-    left: 0;
-}
-
-.content-section.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative; /* Makes the active section take up space */
-    display: block; /* Ensures active section is visible */
-}
-
-.about-section,
-.skills-section {
-    opacity: 0; /* Default state */
-    visibility: hidden; /* Hidden by default */
-    position: absolute; /* Overlapping sections */
-    width: 100%; /* Full width */
-    transition: opacity 1s ease-in-out, visibility 1s ease-in-out; /* Transition for smooth effects */
-}
-
-.about-section.active {
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out 0s; /* Immediate visibility */
-}
-
-.skills-section.active {
-    transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out 0.4s; /* Fades in after About section fades out */
-}
-
-
-/* Button styles */
-.cta-button {
-    background-color: #e63946;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #d62735;
-}
-
 .link-to-services {
     text-decoration: none;
     color: #e63946;
@@ -665,8 +611,8 @@ div h5::after {
 }
 
 .carousel-container {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -702,7 +648,7 @@ div h5::after {
 
 .skill-section {
     margin-bottom: 20px;
-    background: transparent;
+    background: none;
     border-radius: 0;
 }
 
@@ -711,27 +657,11 @@ div h5::after {
     .skill-section {
         margin-bottom: 15px;
     }
-}
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.skill-item {
-    background-color: #3d3d3d;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-    color: white;
-    transition: transform 0.3s;
-}
-
-.skill-item:hover {
-    transform: scale(1.05);
+    .carousel-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 .skill-name {
