@@ -59,3 +59,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Function to control the skills visibility
+document.addEventListener("DOMContentLoaded", function () {
+    const viewSkillsBtn = document.getElementById("view-skills");
+    const viewAboutBtn = document.getElementById("view-about");
+
+    const aboutSection = document.querySelector(".about-section");
+    const skillsSection = document.querySelector(".skills-section");
+
+    // Function to handle smooth fade-in animation
+    function fadeIn(element) {
+        element.classList.add("active");
+    }
+
+    // Function to handle smooth fade-out animation
+    function fadeOut(element, callback) {
+        element.classList.remove("active");
+
+        // Wait for the fade-out transition to complete before executing the callback
+        element.addEventListener("transitionend", function handleTransitionEnd() {
+            element.removeEventListener("transitionend", handleTransitionEnd);
+            if (callback) callback();
+        });
+    }
+
+    // Show "My Skills" section when "View My Skills" button is clicked
+    viewSkillsBtn.addEventListener("click", function () {
+        fadeOut(aboutSection, function () {
+            fadeIn(skillsSection);
+        });
+    });
+
+    // Show "About Me" section when "Go Back to About Me" button is clicked
+    viewAboutBtn.addEventListener("click", function () {
+        fadeOut(skillsSection, function () {
+            fadeIn(aboutSection);
+        });
+    });
+});
+
+
