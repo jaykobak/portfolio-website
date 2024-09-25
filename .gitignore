@@ -2,6 +2,9 @@
 .DS_Store
 copy.txt
 sample.py
+sample.css
+sample.html
+sample.js
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

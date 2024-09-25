@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const observerOptions = {
         root: null, // use the viewport as the container
         rootMargin: '0px',
-        threshold: 0.6 // trigger when 50% of the section is in view
+        threshold: 0.5 // trigger when 50% of the section is in view
     };
 
     const observer = new IntersectionObserver(function (entries) {
@@ -60,43 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Function to control the skills visibility
-document.addEventListener("DOMContentLoaded", function () {
-    const viewSkillsBtn = document.getElementById("view-skills");
-    const viewAboutBtn = document.getElementById("view-about");
+// toggle to skills section
+function showSkills() {
+    document.getElementById('about').classList.remove('active');
+    document.getElementById('skills').classList.add('active');
+}
 
-    const aboutSection = document.querySelector(".about-section");
-    const skillsSection = document.querySelector(".skills-section");
-
-    // Function to handle smooth fade-in animation
-    function fadeIn(element) {
-        element.classList.add("active");
-    }
-
-    // Function to handle smooth fade-out animation
-    function fadeOut(element, callback) {
-        element.classList.remove("active");
-
-        // Wait for the fade-out transition to complete before executing the callback
-        element.addEventListener("transitionend", function handleTransitionEnd() {
-            element.removeEventListener("transitionend", handleTransitionEnd);
-            if (callback) callback();
-        });
-    }
-
-    // Show "My Skills" section when "View My Skills" button is clicked
-    viewSkillsBtn.addEventListener("click", function () {
-        fadeOut(aboutSection, function () {
-            fadeIn(skillsSection);
-        });
-    });
-
-    // Show "About Me" section when "Go Back to About Me" button is clicked
-    viewAboutBtn.addEventListener("click", function () {
-        fadeOut(skillsSection, function () {
-            fadeIn(aboutSection);
-        });
-    });
-});
-
-
+function showAbout() {
+    document.getElementById('skills').classList.remove('active');
+    document.getElementById('about').classList.add('active');
+}
