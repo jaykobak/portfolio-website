@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const observerOptions = {
         root: null, // use the viewport as the container
         rootMargin: '0px',
-        threshold: 0.6 // trigger when 50% of the section is in view
+        threshold: 0.5 // trigger when 50% of the section is in view
     };
 
     const observer = new IntersectionObserver(function (entries) {
