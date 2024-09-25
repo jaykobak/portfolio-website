@@ -24,22 +24,44 @@
 </section>
 
 <!-- Full about me section -->
-<section class="animate-on-scroll" id="about">
+<section class="animate-on-scroll" id="carousel">
     <div class="container">
-        <div class="intro" style="padding-bottom: 20px; padding-left: 20px; padding-right: 20px;">
-            <h4 class="inter-main-header-paragraph">About me</h4>
-            <div class="about-paragraphs">
-                <p class="inter-about-me-paragraph paragraph">
-                    I specialize in creating reliable, efficient and scalable solutions for web and mobile applications. With a deep
-                    expertise in <a href="#" class="link-to-services">Node.js, databases, and cloud technologies</a>, I work with businesses and organizations to build and
-                    maintain the server-side logic, databases, and APIs that keep their applications running smoothly.
-                </p>
-                <p class="inter-about-me-paragraph paragraph">
-                    My work is rooted in a commitment to clean code, performance optimization, and best security practices, ensuring that <a href="" class="link-to-services">every project not only meets but exceeds expectations.</a> From startups to established enterprises, I've leveraged my skills to solve complex challenges, streamline operations, and empower teams with reliable backend systems.
-                </p>
-                <p class="inter-about-me-paragraph paragraph">
-                    Beyond just development, I'm passionate about mentoring aspiring developers, sharing knowledge, and staying up-to-date with the latest in tech. Whether you’re looking to build something new or enhance your existing infrastructure, <a href="" class="link-to-services">I’m here to help turn your vision into reality.</a>
-                </p>
+        <!-- About Me Section -->
+        <div class="carousel-slide active" id="about">
+            <div class="intro" style="padding-bottom: 20px; padding-left: 20px; padding-right: 20px;">
+                <h4 class="inter-main-header-paragraph">About me</h4>
+                <div class="about-paragraphs">
+                    <p class="inter-about-me-paragraph paragraph">
+                        I specialize in creating reliable, efficient, and scalable solutions for web and mobile applications. With deep
+                        expertise in <a href="#" class="link-to-services">Node.js, databases, and cloud technologies</a>, I work with businesses and organizations to build and
+                        maintain the server-side logic, databases, and APIs that keep their applications running smoothly.
+                    </p>
+                    <p class="inter-about-me-paragraph paragraph">
+                        My work is rooted in a commitment to clean code, performance optimization, and best security practices, ensuring that <a href="" class="link-to-services">every project not only meets but exceeds expectations.</a> From startups to established enterprises, I've leveraged my skills to solve complex challenges, streamline operations, and empower teams with reliable backend systems.
+                    </p>
+                    <p class="inter-about-me-paragraph paragraph">
+                        Beyond just development, I'm passionate about mentoring aspiring developers, sharing knowledge, and staying up-to-date with the latest in tech. Whether you’re looking to build something new or enhance your existing infrastructure, <a href="" class="link-to-services">I’m here to help turn your vision into reality.</a>
+                    </p>
+                </div>
+                <button class="toggle-section" onclick="showSkills()">View My Skills</button>
+            </div>
+        </div>
+
+        <!-- My Skills Section -->
+        <div class="carousel-slide" id="skills">
+            <div class="intro" style="padding-bottom: 20px; padding-left: 20px; padding-right: 20px;">
+                <h4 class="inter-main-header-paragraph">My Skills</h4>
+                <div class="skills-list">
+                    <ul class="skills-paragraphs">
+                        <li class="skill-item paragraph">Node.js & Express</li>
+                        <li class="skill-item paragraph">Database Design & Management (SQL, MongoDB)</li>
+                        <li class="skill-item paragraph">RESTful APIs & GraphQL</li>
+                        <li class="skill-item paragraph">Cloud Platforms (AWS, Azure, GCP)</li>
+                        <li class="skill-item paragraph">Performance Optimization & Security</li>
+                        <li class="skill-item paragraph">Mentoring & Knowledge Sharing</li>
+                    </ul>
+                </div>
+                <button class="toggle-section" onclick="showAbout()">Go Back to About Me</button>
             </div>
         </div>
     </div>

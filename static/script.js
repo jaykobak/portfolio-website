@@ -59,3 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// toggle to skills section
+function showSkills() {
+    document.getElementById('about').classList.remove('active');
+    document.getElementById('skills').classList.add('active');
+}
+
+function showAbout() {
+    document.getElementById('skills').classList.remove('active');
+    document.getElementById('about').classList.add('active');
+}

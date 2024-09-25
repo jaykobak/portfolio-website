@@ -428,7 +428,7 @@ body {
     .response-content {
         font-size: 0.8rem;
     }
-}b
+}
 
 h1,
 h2,
@@ -532,7 +532,7 @@ div h5::after {
     background-color: #e63946;
 }
 
-.about-paragraphs {
+.about-paragraphs, .skills-list {
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -542,21 +542,35 @@ div h5::after {
     margin: 0 auto;
 }
 
-.paragraph {
+.paragraph, .skill-item {
     font-size: 16px;
     margin: 20px 0;
     line-height: 1.6; 
 }
 
+.toggle-section {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-section:hover {
+    background-color: #d6303a;
+}
+
 /* font-size for smaller screens */
 @media (max-width: 768px) {
-    .paragraph {
+    .paragraph, .skill-item {
         font-size: 18px;
     }
 }
 
 @media (max-width: 380px) {
-    .paragraph {
+    .paragraph, .skill-item {
         font-size: 15px;
     }
 }
@@ -589,6 +603,31 @@ div h5::after {
 
 .link-to-services:hover {
     color: #ff4d4d;
+}
+
+#carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.carousel-slide {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
 }
 
 .skill-content {
