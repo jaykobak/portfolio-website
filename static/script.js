@@ -60,17 +60,66 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// toggle to skills section
-function toggleSkills() {
-    const skillsSection = document.getElementById('skills');
-    skillsSection.classList.toggle('active');
-    
-    const button = event.target;
-    if (skillsSection.classList.contains('active')) {
-        button.textContent = 'Go Back to About Me';
-        skillsSection.scrollIntoView({ behavior: 'smooth' });
+/// Global variables
+let skillsSection;
+let aboutSection;
+let toggleButton;
+let observer;
+let isScrolling = false;
+
+// Function to run when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    skillsSection = document.getElementById('skills');
+    aboutSection = document.getElementById('about');
+    toggleButton = document.querySelector('.toggle-section');
+
+    // Set up the Intersection Observer
+    observer = new IntersectionObserver((entries) => {
+        if (!isScrolling) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting && skillsSection.classList.contains('active')) {
+                    hideSkills();
+                }
+            });
+        }
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+    // Add click event listener to the toggle button
+    toggleButton.addEventListener('click', handleButtonClick);
+});
+
+function handleButtonClick() {
+    if (!skillsSection.classList.contains('active')) {
+        showSkills();
     } else {
-        button.textContent = 'View My Skills';
-        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        hideSkills();
     }
 }
+
+function showSkills() {
+    // Disconnect the observer temporarily
+    observer.disconnect();
+
+    skillsSection.classList.add('active');
+    toggleButton.textContent = 'Go Back to About Me';
+    
+    // Set isScrolling to true to prevent the observer from hiding the skills section
+    isScrolling = true;
+
+    skillsSection.scrollIntoView({ behavior: 'smooth' });
+
+    // After scrolling is complete, reconnect the observer and reset isScrolling
+    setTimeout(() => {
+        isScrolling = false;
+        observer.observe(skillsSection);
+    }, 5000); // Adjust this timeout if needed to match your scroll duration
+}
+
+function hideSkills() {
+    skillsSection.classList.remove('active');
+    toggleButton.textContent = 'View My Skills';
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Log to console when the script loads
+console.log('Skills toggle script loaded');
