@@ -61,12 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // toggle to skills section
-function showSkills() {
-    document.getElementById('about').classList.remove('active');
-    document.getElementById('skills').classList.add('active');
-}
-
-function showAbout() {
-    document.getElementById('skills').classList.remove('active');
-    document.getElementById('about').classList.add('active');
+function toggleSkills() {
+    const skillsSection = document.getElementById('skills');
+    skillsSection.classList.toggle('active');
+    
+    const button = event.target;
+    if (skillsSection.classList.contains('active')) {
+        button.textContent = 'Go Back to About Me';
+        skillsSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        button.textContent = 'View My Skills';
+        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    }
 }
