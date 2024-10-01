@@ -335,10 +335,13 @@ body {
     display: flex;
     align-items: center;
     padding: 12px 16px;
-    background-color: transparent; /* Dark background for a cohesive look */
-    cursor: pointer;
+    background-color: transparent; /* Transparent background */
+    cursor: pointer; /* Indicates it's clickable */
     width: 100%; /* Ensure full width */
     justify-content: space-between;
+    transition: background-color 0.3s ease;
+    position: relative;
+    flex-wrap: nowrap; /* Prevents wrapping */
 }
 
 .endpoint-group {
@@ -354,18 +357,59 @@ body {
     margin-right: 12px;
     font-size: 0.9rem;
     text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Ensure it doesn't wrap */
 }
 
-.get {
-    background-color: #61affe;
-    color: #ffffff;
-}
+.get { background-color: #61affe; color: #ffffff; }
+.post { background-color: #49cc90; color: #ffffff; }
+.put { background-color: #fca130; color: #ffffff; }
+.delete { background-color: #f93e3e; color: #ffffff; }
 
 /* Endpoint Path */
 .endpoint-path {
     color: #ddd;
     font-weight: bold;
     font-size: 1rem;
+    white-space: nowrap; /* Ensure it doesn't wrap */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.endpoint-description {
+    padding: 0 15px;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.endpoint-description.visible {
+    max-height: 300px; /* Adjust based on content */
+    padding: 15px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.endpoint-description h3 {
+    margin-top: 0;
+    color: #e63946;
+}
+
+.project-details {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.status-badge-1 {
+    background-color: #28a745;
+    color: white;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    border: none;
+    position: relative;
+    border-radius: 4px;
+    white-space: nowrap;
 }
 
 .status-badge {
@@ -373,7 +417,49 @@ body {
     color: white;
     font-size: 0.75rem;
     padding: 2px 6px;
+    border: none;
+    position: relative;
     border-radius: 4px;
+    white-space: nowrap; /* Ensure it doesn't wrap */
+    transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+}
+
+.status-badge:hover {
+    opacity: 0.8;
+}
+
+/* Glow effect */
+.glow {
+    background: linear-gradient(45deg, #ff0000, #ff4d4d); /* Vibrant red gradient */
+    color: #fff;
+    animation: glow 2s infinite alternate;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Glow animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ff0000;
+    }
+    50% {
+        box-shadow: 0 0 20px #ff4d4d;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff0000;
+    }
+}
+
+/* Disable glow */
+.disabled-glow {
+    background-color: #28a745;
+    color: white;
+    box-shadow: none;
+    animation: none;
+    cursor: pointer;
+}
+
+.disabled-glow:hover {
+    opacity: 1;
 }
 
 /* Response Box Styling */
@@ -398,9 +484,17 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+    .endpoint-header {
+        padding: 10px 14px;
+    }
 
     .response-content {
         font-size: 0.9rem;
+    }
+
+    .status-badge, .status-badge-1 {
+        font-size: 0.7rem;
+        padding: 1px 4px; /* Reduce padding for smaller screens */
     }
 }
 
@@ -410,20 +504,26 @@ body {
     }
 
     .endpoint-header {
-        padding: 10px 12px;
+        padding: 8px 10px;
     }
 
     .http-method {
-        font-size: 0.8rem;
-        padding: 3px 8px;
+        font-size: 0.75rem;
+        padding: 2px 6px;
+        margin-right: 6px;
     }
 
     .endpoint-path {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
     }
 
     .response-content {
         font-size: 0.8rem;
+    }
+
+    .status-badge, .status-badge-1 {
+        font-size: 0.65rem;
+        padding: 1px 3px;
     }
 }
 
@@ -486,34 +586,6 @@ h4 {
     }
 }
 
-
-/* About page */
-.about-me-intro, .skills-expertise {
-    z-index: 3;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-/* Hover effect for larger screens */
-.about-me-intro:hover, .skills-expertise:hover {
-    border-color: #e63946 !important;
-    box-shadow: 0 0 15px rgba(230, 57, 70, 0.7), 0 8px 16px rgba(0, 0, 0, 0.3) !important;
-}
-
-.about-me-intro.glow-effect, .skills-expertise.glow-effect {
-    border-color: #e63946;
-    box-shadow: 0 0 15px rgba(230, 57, 70, 0.7), 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-    .about-me-intro:hover, .skills-expertise:hover {
-        border-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-}
-
 div h4 {
     font-size: 2rem;
     margin-top: 20px;
@@ -573,9 +645,8 @@ div h5::after {
 }
 
 .toggle-section {
-    margin-top: 5px;
+    margin-top: 20px;
     padding: 10px 20px;
-    border-radius: 5px;
     background-color: #e63946;
     color: white;
     border: none;
@@ -586,6 +657,35 @@ div h5::after {
 .toggle-section:hover {
     background-color: #d6303a;
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .endpoint-path {
+        font-size: 0.8rem;
+    }
+  
+    .http-method {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        margin-right: 8px;
+    }
+  
+    .project-details {
+        font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .paragraph, .skill-item {
+        font-size: 15px;
+    }
+  }
 
 /* font-size for smaller screens */
 @media (max-width: 768px) {
@@ -630,14 +730,6 @@ div h5::after {
     color: #ff4d4d;
 }
 
-#carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    position: relative;
-}
-
 .carousel-container {
     padding-left: 30px;
     padding-right: 30px;
@@ -646,23 +738,7 @@ div h5::after {
     max-width: 100%;
     height: 100%;
     overflow: hidden;
-}
-
-.carousel-slide {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: auto;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-    opacity: 0;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    visibility: visible;
-    position: relative;
+    margin: 0 auto;
 }
 
 .skill-content {
@@ -735,60 +811,38 @@ div h5::after {
 }
 
 /* Projects section  */
-.project-card {
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+#projects {
+    padding: 0 20px;
+    background-color: transparent;
+    color: white;
+}
+
+#projects-heading {
+    margin-bottom: 40px;
+}
+
+.api-docs {
+    background-color: transparent;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
 }
 
-.project-image {
-    position: relative;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.project-title {
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    position: relative;
-}
-
-.project-details {
-    background-color: white;
-    padding: 15px;
-    max-height: 0;
-    opacity: 0;
+/* Project endpoint styling */
+.project-endpoint {
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
     overflow: hidden;
-    transition: max-height 0.6s ease-in-out, opacity 0.3s ease-in-out;
-    border-top: 1px solid #ddd;
-    position: relative;
+    background-color: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (min-width: 768px) {
-    /* Hover effect for larger screens */
-    .project-card:hover .project-details {
-        max-height: 1000px;
-        opacity: 1;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        transform: translateY(-10px);
-    }
-}
-
-@media (max-width: 767px) {
-    /* Expand on scroll for mobile screens */
-    .project-card.active .project-details {
-        max-height: 1000px;
-        opacity: 1;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        transform: translateY(-10px);
-    }
+.project-endpoint:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .project-button {

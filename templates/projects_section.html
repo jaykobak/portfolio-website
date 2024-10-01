@@ -1,139 +1,45 @@
-<section id="projects" class="projects-section animate-on-scroll">
-    <div class="container">
-        <h4 class="inter-main-header-paragraph">My Projects</h4>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1623777427767-3cf7c9e21a5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <h3 class="project-title">Project Title</h3>
-                        <p class="d-inline-flex gap-1">
-                            <button class="btn btn-primary project-button toggle-btn" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample" id="toggleButton">Show more</button>
-                        </p>
+<section class="animate-on-scroll" id="projects">
+    <div class="carousel-container">
+        <div class="intro">
+            <div class="api-docs">
+                <h4 class="inter-main-header-paragraph" id="projects-heading">Projects</h4>
+
+                <!-- Project endpoint 1 -->
+                <div class="project-endpoint">
+                    <div class="endpoint-header" role="button" onclick="toggleDescription(this)" aria-expanded="false">
+                        <div class="endpoint-group">
+                            <span class="http-method get">GET</span>
+                            <span class="endpoint-path">/programmerspeak</span>
+                        </div>
+                        <button class="status-badge glow" aria-label="Toggle Project Details">Click me</button>
                     </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body project-details">
-                            <p>Project description or features can go here. You can include tech stacks used and other
-                                key points about the project.</p>
-                            <ul class="project-features">
-                                <li>Good accessibitly parnerskdi djs nit hein</li>
-                            </ul>
+                    <div class="endpoint-description">
+                        <h3>ProgrammersPeak</h3>
+                        <p>Retrieves details about the API Gateway project.</p>
+                        <div class="project-details">A scalable API gateway built with Node.js and Express, featuring request routing, rate limiting, and authentication</div>
+                    </div>
+                </div>
+
+                <!-- Project endpoint 2 -->
+                <div class="project-endpoint">
+                    <div class="endpoint-header" role="button" onclick="toggleDescription(this)" aria-expanded="false">
+                        <div class="endpoint-group">
+                            <span class="http-method post">POST</span>
+                            <span class="endpoint-path">/pytrack</span>
+                        </div>
+                        <button class="status-badge glow" aria-label="Toggle Project Details">Click me</button>
+                    </div>
+                    <div class="endpoint-description">
+                        <h3>Pytrack</h3>
+                        <p>Retrieves details about the API Gateway project.</p>
+                        <div class="project-details">
+                            A scalable API gateway built with Node.js and Express, featuring request routing, rate limiting, and
+                            authentication.
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Add more project cards here -->
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1623777427767-3cf7c9e21a5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <h3 class="project-title">Project Title</h3>
-                        <p class="d-inline-flex gap-1">
-                            <button class="btn btn-primary project-button toggle-btn" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample" id="toggleButton">Show more</button>
-                        </p>
-                    </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body project-details">
-                            <p>Project description or features can go here. You can include tech stacks used and other
-                                key points about the project.</p>
-                            <ul class="project-features">
-                                <li>Good accessibitly parnerskdi djs nit hein</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1623777427767-3cf7c9e21a5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <h3 class="project-title">Project Title</h3>
-                        <p class="d-inline-flex gap-1">
-                            <button class="btn btn-primary project-button toggle-btn" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample" id="toggleButton">Show more</button>
-                        </p>
-                    </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body project-details">
-                            <p>Project description or features can go here. You can include tech stacks used and other
-                                key points about the project.</p>
-                            <ul class="project-features">
-                                <li>Good accessibitly parnerskdi djs nit hein</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1623777427767-3cf7c9e21a5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <h3 class="project-title">Project Title</h3>
-                        <p class="d-inline-flex gap-1">
-                            <button class="btn btn-primary project-button toggle-btn" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample" id="toggleButton">Show more</button>
-                        </p>
-                    </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body project-details">
-                            <p>Project description or features can go here. You can include tech stacks used and other
-                                key points about the project.</p>
-                            <ul class="project-features">
-                                <li>Good accessibitly parnerskdi djs nit hein</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1623777427767-3cf7c9e21a5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <h3 class="project-title">Project Title</h3>
-                        <p class="d-inline-flex gap-1">
-                            <button class="btn btn-primary project-button toggle-btn" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample" id="toggleButton">Show more</button>
-                        </p>
-                    </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body project-details">
-                            <p>Project description or features can go here. You can include tech stacks used and other
-                                key points about the project.</p>
-                            <ul class="project-features">
-                                <li>Good accessibitly parnerskdi djs nit hein</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="project-card">
-                    <div class="project-image"
-                        style="background-image: url('https://images.unsplash.com/photo-1623777427767-3cf7c9e21a5a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-                        <h3 class="project-title">Project Title</h3>
-                        <p class="d-inline-flex gap-1">
-                            <button class="btn btn-primary project-button toggle-btn" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                aria-controls="collapseExample" id="toggleButton">Show more</button>
-                        </p>
-                    </div>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body project-details">
-                            <p>Project description or features can go here. You can include tech stacks used and other
-                                key points about the project.</p>
-                            <ul class="project-features">
-                                <li>Good accessibitly parnerskdi djs nit hein</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+                <!-- More projects endpoints go here -->
             </div>
         </div>
     </div>

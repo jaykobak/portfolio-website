@@ -5,6 +5,7 @@ sample.py
 sample.css
 sample.html
 sample.js
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

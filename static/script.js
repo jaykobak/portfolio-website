@@ -123,3 +123,95 @@ function hideSkills() {
 
 // Log to console when the script loads
 console.log('Skills toggle script loaded');
+
+// Function to toggle project descriptions based on interaction
+function toggleProject(event) {
+    // Determine the source of the event
+    const isBadge = event.target.classList.contains('status-badge');
+
+    // Identify the project endpoint container
+    const projectEndpoint = isBadge
+        ? event.target.closest('.project-endpoint')
+        : event.target.closest('.project-endpoint');
+
+    const header = projectEndpoint.querySelector('.endpoint-header');
+    const badge = projectEndpoint.querySelector('.status-badge');
+    const description = projectEndpoint.querySelector('.endpoint-description');
+
+    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+        // Collapse the project
+        header.setAttribute('aria-expanded', 'false');
+        badge.textContent = 'Click me';
+        badge.classList.remove('disabled-glow');
+        badge.classList.add('glow');
+        description.classList.remove('visible');
+    } else {
+        // Collapse any other expanded projects
+        const allProjects = document.querySelectorAll('.project-endpoint');
+        allProjects.forEach(project => {
+            const projHeader = project.querySelector('.endpoint-header');
+            const projBadge = project.querySelector('.status-badge');
+            const projDescription = project.querySelector('.endpoint-description');
+
+            if (project !== projectEndpoint) {
+                projHeader.setAttribute('aria-expanded', 'false');
+                projBadge.textContent = 'Click me';
+                projBadge.classList.remove('disabled-glow');
+                projBadge.classList.add('glow');
+                projDescription.classList.remove('visible');
+            }
+        });
+
+        // Expand the clicked project
+        header.setAttribute('aria-expanded', 'true');
+        badge.textContent = '201 Created';
+        badge.classList.remove('glow');
+        badge.classList.add('disabled-glow');
+        description.classList.add('visible');
+    }
+}
+
+// Function to handle keyboard accessibility for endpoint headers
+function handleHeaderKeyPress(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault(); // Prevent scrolling on space
+        toggleProject(event);
+    }
+}
+
+// Attach event listeners to all endpoint headers and status badges once the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const endpointHeaders = document.querySelectorAll('.endpoint-header');
+    const statusBadges = document.querySelectorAll('.status-badge');
+
+    // Initialize all badges
+    statusBadges.forEach(badge => {
+        badge.textContent = 'Click me';
+        badge.classList.add('glow');
+        badge.setAttribute('aria-expanded', 'false');
+
+        // Attach click event listener to badges
+        badge.addEventListener('click', (event) => {
+            toggleProject(event);
+            event.stopPropagation(); // Prevent the header's click event from firing
+        });
+
+        // Attach keyboard accessibility to badges
+        badge.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                toggleProject(event);
+            }
+        });
+    });
+
+    // Attach click and keyboard event listeners to endpoint headers
+    endpointHeaders.forEach(header => {
+        header.addEventListener('click', toggleProject);
+
+        // Keyboard accessibility
+        header.addEventListener('keydown', handleHeaderKeyPress);
+    });
+});
