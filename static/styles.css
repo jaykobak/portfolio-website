@@ -374,6 +374,7 @@ body {
     white-space: nowrap; /* Ensure it doesn't wrap */
     overflow: hidden;
     text-overflow: ellipsis;
+    max-width: 100%; /* Adjust based on layout */
 }
 
 .endpoint-description {
@@ -393,12 +394,105 @@ body {
 .endpoint-description h3 {
     margin-top: 0;
     color: #e63946;
+    font-size: 1.5rem;
 }
 
 .project-details {
-    margin-top: 10px;
+    margin-top: 15px;
     font-size: 14px;
     color: #ccc;
+}
+
+.project-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #444;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.project-link:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.project-link svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    fill: #ffffff;
+    transition: fill 0.3s ease;
+}
+
+.project-link:hover svg {
+    fill: #e63946;
+}
+
+@media (max-width: 768px) {
+    .project-links {
+        flex-wrap: nowrap;
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .project-link {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        flex-shrink: 0; /* Prevents the links from shrinking */
+    }
+
+    /* Hide scrollbar but allow scrolling */
+    .project-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-links {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+@media (max-width: 390px) {
+    .project-links {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 10px;
+    }
+
+    .project-link {
+        padding: 5px 8px;
+        font-size: 0.8rem; /* Further reduced font size */
+        display: flex;
+        align-items: center;
+    }
+
+    .project-link svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+}
+
+/* Icon styles */
+.icon-github {
+    fill: #ffffff;
+}
+
+.icon-live {
+    fill: #ffffff;
 }
 
 .status-badge-1 {
@@ -422,6 +516,8 @@ body {
     border-radius: 4px;
     white-space: nowrap; /* Ensure it doesn't wrap */
     transition: background 0.5s, color 0.5s, box-shadow 0.5s;
+    overflow: hidden;
+    outline: none;
 }
 
 .status-badge:hover {
@@ -434,6 +530,7 @@ body {
     color: #fff;
     animation: glow 2s infinite alternate;
     transition: all 0.3s ease-in-out;
+    background-position: center;
 }
 
 /* Glow animation */
@@ -515,6 +612,7 @@ body {
 
     .endpoint-path {
         font-size: 0.75rem;
+        max-width: 60%; /* Adjust based on layout */
     }
 
     .response-content {
@@ -668,6 +766,7 @@ div h5::after {
   @media (max-width: 768px) {
     .endpoint-path {
         font-size: 0.8rem;
+        max-width: 60%; /* Adjust based on layout */
     }
   
     .http-method {
@@ -837,6 +936,7 @@ div h5::after {
     border-radius: 8px;
     overflow: hidden;
     background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
