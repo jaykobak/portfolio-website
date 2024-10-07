@@ -67,7 +67,7 @@ let toggleButton;
 let observer;
 let isScrolling = false;
 
-// Function to run when the DOM is fully loaded
+// Function to toggle the skills section
 document.addEventListener('DOMContentLoaded', function() {
     skillsSection = document.getElementById('skills');
     aboutSection = document.getElementById('about');

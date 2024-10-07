@@ -737,13 +737,19 @@ div h5::after {
 
 .about-paragraphs {
     padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
     text-align: center;
     color: white;
     margin: 0 auto;
 }
+
+/* Insert padding to bigger screens */
+@media (min-width: 769px) {
+    .about-paragraphs {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
 
 .paragraph {
     font-size: 16px;
@@ -751,7 +757,7 @@ div h5::after {
 }
 
 .toggle-section {
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 10px 20px;
     background-color: #e63946;
     color: white;
@@ -798,12 +804,6 @@ div h5::after {
 @media (max-width: 768px) {
     .paragraph {
         font-size: 18px;
-    }
-}
-
-@media (max-width: 380px) {
-    .paragraph {
-        font-size: 15px;
     }
 }
 
