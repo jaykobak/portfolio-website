@@ -308,11 +308,19 @@ body {
     }
 }
 
-#about, #skills {
+#about {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    box-sizing: border-box;
+}
+
+#skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
     box-sizing: border-box;
 }
 
@@ -468,7 +476,7 @@ body {
 @media (max-width: 390px) {
     .project-links {
         display: flex;
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -911,9 +919,19 @@ div h5::after {
 
 /* Projects section  */
 #projects {
-    padding: 0 20px;
+    padding: 0 20px; /* Adjust padding around the project section */
     background-color: transparent;
     color: white;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 390px) {
+    #projects {
+        padding: 0 5px; /* Adjust padding around the project section */
+    }
 }
 
 #projects-heading {
