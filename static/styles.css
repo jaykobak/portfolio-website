@@ -763,7 +763,7 @@ div h5::after {
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .toggle-section:hover {
@@ -884,15 +884,16 @@ div h5::after {
 #skills {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease-out, transform 0.5s ease-out;
     opacity: 0;
+    transform: translateY(-20px);
 }
 
 #skills.active {
-    width: 100%;
     max-width: 100%;
     max-height: 2000px;
     opacity: 1;
+    transform: translateY(0);
 }
 
 .skills-grid {
